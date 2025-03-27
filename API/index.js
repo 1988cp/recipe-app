@@ -15,10 +15,6 @@ const db = new sqlite3.Database('../../db/dinnersdb.db', (err) => {
     console.log('Connected to the database.');
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-})
-
 app.get('/recipes', (req, res) => {
     const sql = 'SELECT * FROM recipes';
     db.all(sql, [], (err, rows) => {
